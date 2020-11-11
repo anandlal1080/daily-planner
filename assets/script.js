@@ -24,14 +24,14 @@ function createTimeSlot(hour) {
   
   let currentTime = luxon.DateTime.local().toFormat("H");
   $(".container").each(function(block){
-      console.log($timeSlot.attr("value"));
-      if($timeSlot.attr("value") < currentTime) {
-          $textArea.css("background-color", "gray");
-          } else if ($timeSlot.attr("value") == currentTime){
-            $textArea.css("background-color", "red");
-          } else{
-            $textArea.css("background-color", "green");
-          }
-  });
+    console.log($timeSlot.attr("value"));
+    if($timeSlot.attr("value") < currentTime) {
+        $textArea.addClass("past");
+        } else if ($timeSlot.attr("value") == currentTime){
+          $textArea.addClass("present");
+        } else{
+          $textArea.addClass("future");
+        }
+});
   return $timeSlot;
 }
