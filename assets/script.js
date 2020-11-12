@@ -1,7 +1,5 @@
 let currentDay = $("#currentDay").text(luxon.DateTime.local().toFormat("ff"));
 
-
-
 for (let hour = 9; hour < 18; hour++) {
   $(".container").append(createTimeSlot(hour));
 }

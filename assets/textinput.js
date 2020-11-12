@@ -21,3 +21,9 @@ $saveBtn.on("click", function(e){
 plansForDay.forEach(function(plan) {
     $("div[value='" + plan.currentHour + "']").children('textarea').text(plan.currentText);
   })
+
+
+  $("#clear").on("click", function(){
+    window.localStorage.clear();
+    location.reload();
+})
